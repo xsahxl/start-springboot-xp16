@@ -1,17 +1,22 @@
-const winston = require('winston');
-const isEmpty = require('lodash.isempty');
+const winston = require("winston");
+const isEmpty = require("lodash.isempty");
 
 const logFormatter = winston.format.printf((info) => {
   const filtered = Object.keys(info)
-    .filter((key) => !['level', 'message', 'timestamp', 'label', 'stack'].includes(key))
+    .filter(
+      (key) =>
+        !["level", "message", "timestamp", "label", "stack"].includes(key)
+    )
     .reduce((obj, key) => {
       const obz = obj;
       obz[key] = info[key];
       return obz;
     }, {});
 
-  let logs = `${info.timestamp} ${info.level.toUpperCase()} ${info.label} - ${info.message}`;
-  if (info.level === 'error' && !isEmpty(info.stack)) {
+  let logs = `${info.timestamp} ${info.level.toUpperCase()} ${info.label} - ${
+    info.message
+  }`;
+  if (info.level === "error" && !isEmpty(info.stack)) {
     logs += `, ${info.stack}`;
   }
   if (!isEmpty(filtered)) {
@@ -20,7 +25,7 @@ const logFormatter = winston.format.printf((info) => {
   return logs;
 });
 
-function getLogger(label = 'unknown', options = {}) {
+function getLogger(label = "unknown", options = {}) {
   const { filename, stream } = options;
   const transports = [new winston.transports.Console()];
   if (filename) {
@@ -30,16 +35,16 @@ function getLogger(label = 'unknown', options = {}) {
   }
 
   return winston.createLogger({
-    level: 'info',
+    level: "info",
     exitOnError: false,
-    format: winston.format.combine(
-      winston.format.label({ label: `${label}` }),
-      winston.format.timestamp({
-        format: 'YYYY-MM-DD HH:mm:ss',
-      }),
-      // winston.format.errors({ stack: true }),
-      logFormatter,
-    ),
+    // format: winston.format.combine(
+    //   winston.format.label({ label: `${label}` }),
+    //   winston.format.timestamp({
+    //     format: 'YYYY-MM-DD HH:mm:ss',
+    //   }),
+    //   // winston.format.errors({ stack: true }),
+    //   logFormatter,
+    // ),
     transports,
   });
 }
