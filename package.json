@@ -1,0 +1,26 @@
+{
+  "name": "start-springboot-xp16",
+  "version": "1.0.0",
+  "description": "<p align=\"center\" class=\"flex justify-center\">     <a href=\"https://www.serverless-devs.com\" class=\"ml-1\">     <img src=\"http://editor.devsapp.cn/icon?package=start-springboot&type=packageType\">   </a>   <a href=\"http://www.devsapp.cn/details.html?name=start-springboot\" class=\"ml-1\">     <img src=\"http://editor.devsapp.cn/icon?package=start-springboot&type=packageVersion\">   </a>   <a href=\"http://www.devsapp.cn/details.html?name=start-springboot\" class=\"ml-1\">     <img src=\"http://editor.devsapp.cn/icon?package=start-springboot&type=packageDownload\">   </a> </p>",
+  "main": "index.js",
+  "scripts": {
+    "debug": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xsahxl/start-springboot-xp16.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xsahxl/start-springboot-xp16/issues"
+  },
+  "homepage": "https://github.com/xsahxl/start-springboot-xp16#readme",
+  "dependencies": {
+    "@serverless-cd/core": "^0.0.24",
+    "@serverless-cd/engine": "^0.0.41",
+    "lodash.isempty": "^4.4.0",
+    "winston": "^3.8.2"
+  }
+}
