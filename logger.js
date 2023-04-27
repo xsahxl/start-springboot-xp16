@@ -37,14 +37,14 @@ function getLogger(label = "unknown", options = {}) {
   return winston.createLogger({
     level: "info",
     exitOnError: false,
-    // format: winston.format.combine(
-    //   winston.format.label({ label: `${label}` }),
-    //   winston.format.timestamp({
-    //     format: 'YYYY-MM-DD HH:mm:ss',
-    //   }),
-    //   // winston.format.errors({ stack: true }),
-    //   logFormatter,
-    // ),
+    format: winston.format.combine(
+      winston.format.label({ label: `${label}` }),
+      winston.format.timestamp({
+        format: "YYYY-MM-DD HH:mm:ss",
+      }),
+      // winston.format.errors({ stack: true }),
+      logFormatter
+    ),
     transports,
   });
 }
