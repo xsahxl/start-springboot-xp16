@@ -23,9 +23,9 @@ const engine = new Engine({
       run: "s deploy --use-local -y",
     },
   ],
-  logConfig: {
-    customLogger: logger,
-  },
+  // logConfig: {
+  //   customLogger: logger,
+  // },
 });
 
 engine.start();
