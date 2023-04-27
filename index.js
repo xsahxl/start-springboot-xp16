@@ -21,6 +21,7 @@ const engine = new Engine({
   steps: [
     {
       run: "s deploy --use-local -y",
+      run: "cat logFile",
     },
   ],
   logConfig: {

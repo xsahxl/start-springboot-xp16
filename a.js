@@ -6,12 +6,12 @@ function onFinish(cp) {
     const stdout = [];
     const stderr = [];
     cp.stdout.on("data", (chunk) => {
-      console.info(chunk.toString());
+      console.log(chunk.toString());
       stdout.push(chunk);
     });
 
     cp.stderr.on("data", (chunk) => {
-      console.info(chunk.toString());
+      console.log(chunk.toString());
       stderr.push(chunk);
     });
 
