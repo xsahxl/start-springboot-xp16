@@ -24,7 +24,7 @@ const engine = new Engine({
     },
   ],
   logConfig: {
-    customLogger: logger,
+    customLogger: console,
   },
 });
 
